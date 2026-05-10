@@ -586,11 +586,12 @@ class HealthGridDesklet extends Desklet.Desklet {
         let cache = this._commandCache[cacheKey] || {
             timestamp: 0,
             output: null,
+            hasResult: false,
             pending: false
         };
         this._commandCache[cacheKey] = cache;
 
-        if (cache.output !== null && nowSeconds - cache.timestamp < SLOW_COMMAND_SECONDS) {
+        if (cache.hasResult && nowSeconds - cache.timestamp < SLOW_COMMAND_SECONDS) {
             return cache.output;
         }
 
@@ -599,6 +600,7 @@ class HealthGridDesklet extends Desklet.Desklet {
             runCommandAsync(argv, (success, output) => {
                 cache.pending = false;
                 cache.timestamp = GLib.get_monotonic_time() / 1000000;
+                cache.hasResult = true;
                 cache.output = success ? output : null;
                 cache.reason = success ? null : unavailableReason;
 
