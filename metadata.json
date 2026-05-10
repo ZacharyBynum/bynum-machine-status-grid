@@ -1,0 +1,9 @@
+{
+    "uuid": "bynum-machine-status-grid@zachary",
+    "name": "Bynum Machine Status Grid",
+    "description": "A compact all-in-one machine status desklet with CPU, memory, GPU, disk, network, and temperature metrics.",
+    "version": "1.0.0",
+    "author": "zachary",
+    "max-instances": "4",
+    "prevent-decorations": true
+}
