@@ -94,12 +94,9 @@ If GPU or temperature data is missing:
 
 ## Screenshots
 
-Screenshots should be stored under `screenshots/` for release notes or a Cinnamon Spices listing.
+![Bynum Machine Status Grid interface](screenshots/interface.png)
 
-Suggested files:
-
-- `screenshots/dark-mode.png`
-- `screenshots/light-mode.png`
+Additional screenshots can be stored under `screenshots/` for release notes or a Cinnamon Spices listing.
 
 ## Security And Privacy
 
